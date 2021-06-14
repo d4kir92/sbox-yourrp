@@ -5,7 +5,7 @@ using System;
 using System.IO;
 using System.Threading.Tasks;
 
-namespace YourRP
+namespace YourRPExample
 {
 	[Library( "yourrp", Title = "YourRP" )]
 	public partial class YourRPGame : Sandbox.Game
@@ -25,10 +25,14 @@ namespace YourRP
 			}
 		}
 
-		public override Player CreatePlayer()
+		public override void ClientJoined( Client client )
 		{
-			return new YourRPPlayer();
+			base.ClientJoined( client );
+
+			var player = new RPPlayer();
+			client.Pawn = player;
+
+			player.Respawn();
 		}
 	}
-
 }

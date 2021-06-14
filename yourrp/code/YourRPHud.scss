@@ -1,4 +1,41 @@
 
+Health {
+    position: absolute;
+    background-color: rgba( black, 0.5 );
+    border-radius: 9px;
+    left: 48;
+    bottom: 48px;
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+    height: 60px;
+    padding: 0 10px;
+    align-items: center;
+
+    .icon {
+        font-size: 30px;
+        padding-right: 10px;
+    }
+}
+
+Armor {
+    position: absolute;
+    background-color: rgba( black, 0.5 );
+    border-radius: 9px;
+    left: 48;
+    bottom: 118px;
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+    height: 60px;
+    padding: 0 10px;
+    align-items: center;
+
+    .icon {
+        font-size: 30px;
+        padding-right: 10px;
+    }
+}
 
 text.title
 {
@@ -7,7 +44,7 @@ text.title
 	font-weight: 900;
 	color: white;
 	position: absolute;
-	left: 200px;
-	top: 200px;
-	text-shadow: 5px 5px 50px rgba( black, 0.8 );
+	left: 100px;
+	top: 100px;
+	text-shadow: 2px 2px 10px rgba( black, 0.8 );
 }
