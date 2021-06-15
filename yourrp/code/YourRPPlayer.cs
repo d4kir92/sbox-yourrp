@@ -29,8 +29,8 @@ namespace YourRPExample
 			
 			base.Respawn();
 
-			Health = 10;
-			Armor = 50;
+			Health = 100;
+			Armor = 100;
 			Role = "Pirat";
 		}
 

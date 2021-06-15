@@ -7,7 +7,7 @@ Docs: https://yourrp.maxplayz.de/
 $primary-color: #1771F0;
 $white: #fff;
 $black: #000;
-$border-radius: 1%;
+$border-radius: 100%;
 
 // Elements
 Health {
@@ -16,7 +16,7 @@ Health {
     border-radius: $border-radius;
     left: 1%;
     bottom: 1%;
-    font-size: 40px;
+    font-size: 25px;
     font-weight: bold;
     color: $white;
     height: 4%;
@@ -24,8 +24,11 @@ Health {
     align-items: center;
 
     .icon {
-        font-size: 30px;
-        padding-right: 10px;
+        font-size: 25px;
+    }
+
+    .value {
+        left: 6px;
     }
 }
 
@@ -33,7 +36,7 @@ Health {
     position: absolute;
     background-color: rgba( $black, 0.5 );
     border-radius: $border-radius;
-    font-size: 40px;
+    font-size: 25px;
     font-weight: bold;
     color: $white;
     height: 100%;
@@ -45,7 +48,7 @@ Health {
     position: absolute;
     background-color: rgba( $primary-color, 0.5 );
     border-radius: $border-radius;
-    font-size: 40px;
+    font-size: 25px;
     font-weight: bold;
     color: $white;
     height: 100%;
@@ -55,11 +58,11 @@ Health {
 
 Armor {
     position: absolute;
-    background-color: rgba( $black, 0.5 );
+    background-color: rgba( $black, 0 );
     border-radius: $border-radius;
     left: 1%;
     bottom: 3%;
-    font-size: 40px;
+    font-size: 25px;
     font-weight: bold;
     color: $white;
     height: 4%;
@@ -67,18 +70,45 @@ Armor {
     align-items: center;
 
     .icon {
-        font-size: 30px;
-        padding-right: 10px;
+        font-size: 25px;
     }
+
+    .value {
+        left: 6px;
+    }
+}
+
+.background_armor {
+    position: absolute;
+    background-color: rgba( $black, 0.5 );
+    border-radius: $border-radius;
+    font-size: 25px;
+    font-weight: bold;
+    color: $white;
+    height: 100%;
+    padding: 0 0px;
+    align-items: center;
+}
+
+.bar_armor {
+    position: absolute;
+    background-color: rgba( $primary-color, 0.5 );
+    border-radius: $border-radius;
+    font-size: 25px;
+    font-weight: bold;
+    color: $white;
+    height: 100%;
+    padding: 0 0px;
+    align-items: center;
 }
 
 Role {
     position: absolute;
-    background-color: rgba( $black, 0.5 );
+    background-color: rgba( $black, 0 );
     border-radius: $border-radius;
     left: 1%;
     bottom: 5%;
-    font-size: 40px;
+    font-size: 25px;
     font-weight: bold;
     color: $white;
     height: 4%;
@@ -87,20 +117,18 @@ Role {
 
     .icon {
         font-size: 30px;
-        padding-right: 10px;
     }
 }
 
-text.title
-{
-	font-family: Poppins;
-	font-size: 50px;
-	font-weight: 900;
-	color: $white;
-	position: absolute;
-	left: 100px;
-	top: 100px;
-	text-shadow: 2px 2px 10px rgba( $black, 0.8 );
+text.title {
+    font-family: Poppins;
+    font-size: 50px;
+    font-weight: 900;
+    color: $white;
+    position: absolute;
+    left: 100px;
+    top: 100px;
+    text-shadow: 2px 2px 10px rgba( $black, 0.8 );
 }
 
 

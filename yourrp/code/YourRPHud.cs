@@ -27,10 +27,10 @@ namespace YourRPExample
 
 		public Health()
 		{
-			hptext =		Add.Label( "100", "value" );
-			hpbackground =	Add.Panel( "background_health" );
-			hpbar =			Add.Panel( "bar_health" );
+			hpbackground =	Add.Panel( "background_armor" );
+			hpbar =			Add.Panel( "bar_armor" );
 			Add.Label( "🩸", "icon" );
+			hptext = Add.Label( "100", "value" );
 
 			hpbackground.Style.Width = Screen.Width * 0.1f;
 			hpbackground.Style.Dirty();
@@ -40,10 +40,13 @@ namespace YourRPExample
 		{
 			var player = Local.Pawn;
 			float width = 0.0f;
+			float height = Screen.Height * 0.02f; 
+			float barwidth = Screen.Width * 0.1f - (2 * height);
 			var text = "0";
-			if ( player != null )
+			width = height;
+			if ( player != null)
 			{
-				width = Screen.Width * 0.1f * player.Health / 100;
+				width = height + barwidth * player.Health / 100 + height;
 				text = $"{player.Health:n0}";
 			}
 			hptext.Text = text;
@@ -54,29 +57,41 @@ namespace YourRPExample
 
 	public class Armor : Panel
 	{
-		public Label ARText;
-		public Panel ARBar;
+		public Label artext;
+		public Panel arbackground;
+		public Panel arbar;
 
 		public Armor()
 		{
-			ARText = Add.Label( "100", "value" );
-			ARBar = Add.Panel( "armorbar" );
+			arbackground = Add.Panel( "background_armor" );
+			arbar = Add.Panel( "bar_armor" );
 			Add.Label( "🛡", "icon" );
+			artext = Add.Label( "100", "value" );
+
+			arbackground.Style.Width = Screen.Width * 0.1f;
+			arbackground.Style.Dirty();
 		}
 
 		public override void Tick()
 		{
 			var player = Local.Pawn;
-			if ( player == null ) return;
-
-			var rpplayer = (RPPlayer)player; // Cast to RPPlayer
-			if ( player == null ) return;
-
-			ARText.Text = $"{rpplayer.Armor:n0}";
-
-			var width = 200 * rpplayer.Armor / 100;
-			ARBar.Style.Width = width;
-			ARBar.Style.Dirty();
+			float width = 0.0f;
+			float height = Screen.Height * 0.02f;
+			float barwidth = Screen.Width * 0.1f - (2 * height);
+			var text = "0";
+			width = height;
+			if ( player != null )
+			{
+				var rpplayer = (RPPlayer)player;
+				if ( rpplayer != null )
+				{
+					width = height + barwidth * rpplayer.Armor / 100 + height;
+					text = $"{rpplayer.Armor:n0}";
+				}
+			}
+			artext.Text = text;
+			arbar.Style.Width = width;
+			arbar.Style.Dirty();
 		}
 	}
 
