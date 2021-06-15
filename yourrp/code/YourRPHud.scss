@@ -1,13 +1,24 @@
+/* 
+Authors: D4KiR, MaxPlayZ.
+Docs: https://yourrp.maxplayz.de/
+*/
 
+// Variables
+$primary-color: #1771F0;
+$white: #fff;
+$black: #000;
+$border-radius: 9px;
+
+// Elements
 Health {
     position: absolute;
-    background-color: rgba( black, 0.5 );
-    border-radius: 9px;
+    background-color: rgba( $black, 0.5 );
+    border-radius: $border-radius;
     left: 48;
     bottom: 48px;
     font-size: 40px;
     font-weight: bold;
-    color: white;
+    color: $white;
     height: 60px;
     padding: 0 10px;
     align-items: center;
@@ -20,13 +31,13 @@ Health {
 
 Armor {
     position: absolute;
-    background-color: rgba( black, 0.5 );
-    border-radius: 9px;
+    background-color: rgba( $black, 0.5 );
+    border-radius: $border-radius;
     left: 48;
     bottom: 118px;
     font-size: 40px;
     font-weight: bold;
-    color: white;
+    color: $white;
     height: 60px;
     padding: 0 10px;
     align-items: center;
@@ -42,9 +53,9 @@ text.title
 	font-family: Poppins;
 	font-size: 50px;
 	font-weight: 900;
-	color: white;
+	color: $white;
 	position: absolute;
 	left: 100px;
 	top: 100px;
-	text-shadow: 2px 2px 10px rgba( black, 0.8 );
+	text-shadow: 2px 2px 10px rgba( $black, 0.8 );
 }
