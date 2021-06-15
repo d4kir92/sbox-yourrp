@@ -21,31 +21,34 @@ namespace YourRPExample
 
 	public class Health : Panel
 	{
-		public Label text;
-		public Panel background; 
-		public Panel bar;
+		public Label hptext;
+		public Panel hpbackground; 
+		public Panel hpbar;
 
 		public Health()
 		{
+			hptext =		Add.Label( "100", "value" );
+			hpbackground =	Add.Panel( "background_health" );
+			hpbar =			Add.Panel( "bar_health" );
 			Add.Label( "🩸", "icon" );
-			text =			Add.Label( "100", "value" );
-			background =	Add.Panel( "background_health" );
-			bar =			Add.Panel( "bar_health" );
 
-			background.Style.Width = 200;
-			bar.Style.Dirty();
+			hpbackground.Style.Width = Screen.Width * 0.1f;
+			hpbackground.Style.Dirty();
 		}
 
 		public override void Tick()
 		{
 			var player = Local.Pawn;
-			if ( player == null ) return;
-
-			text.Text = $"{player.Health:n0}";
-
-			var width = 200 * player.Health / 100;
-			bar.Style.Width = width;
-			bar.Style.Dirty();
+			float width = 0.0f;
+			var text = "0";
+			if ( player != null )
+			{
+				width = Screen.Width * 0.1f * player.Health / 100;
+				text = $"{player.Health:n0}";
+			}
+			hptext.Text = text;
+			hpbar.Style.Width = width;
+			hpbar.Style.Dirty();
 		}
 	}
 
@@ -56,9 +59,9 @@ namespace YourRPExample
 
 		public Armor()
 		{
-			Add.Label( "🛡", "icon" );
 			ARText = Add.Label( "100", "value" );
 			ARBar = Add.Panel( "armorbar" );
+			Add.Label( "🛡", "icon" );
 		}
 
 		public override void Tick()

@@ -29,7 +29,7 @@ namespace YourRPExample
 			
 			base.Respawn();
 
-			Health = 100;
+			Health = 10;
 			Armor = 50;
 			Role = "Pirat";
 		}
