@@ -21,14 +21,19 @@ namespace YourRPExample
 
 	public class Health : Panel
 	{
-		public Label HPText;
-		public Panel HPBar;
+		public Label text;
+		public Panel background; 
+		public Panel bar;
 
 		public Health()
 		{
 			Add.Label( "🩸", "icon" );
-			HPText = Add.Label( "100", "value" );
-			HPBar = Add.Panel( "healthbar" );
+			text =			Add.Label( "100", "value" );
+			background =	Add.Panel( "background_health" );
+			bar =			Add.Panel( "bar_health" );
+
+			background.Style.Width = 200;
+			bar.Style.Dirty();
 		}
 
 		public override void Tick()
@@ -36,11 +41,11 @@ namespace YourRPExample
 			var player = Local.Pawn;
 			if ( player == null ) return;
 
-			HPText.Text = $"{player.Health:n0}";
+			text.Text = $"{player.Health:n0}";
 
 			var width = 200 * player.Health / 100;
-			HPBar.Style.Width = width;
-			HPBar.Style.Dirty();
+			bar.Style.Width = width;
+			bar.Style.Dirty();
 		}
 	}
 
