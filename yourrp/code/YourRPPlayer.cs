@@ -8,6 +8,10 @@ namespace YourRPExample
 	{
 		[Net, Predicted]
 		public float Armor { get; set; }
+
+		[Net, Predicted]
+		public string Role { get; set; }
+
 		public override void Respawn()
 		{
 			SetModel( "models/citizen/citizen.vmdl" );
@@ -27,6 +31,7 @@ namespace YourRPExample
 
 			Health = 100;
 			Armor = 50;
+			Role = "Pirat";
 		}
 
 		public override void Simulate( Client cl )

@@ -14,7 +14,7 @@ Health {
     position: absolute;
     background-color: rgba( $black, 0.5 );
     border-radius: $border-radius;
-    left: 48;
+    left: 48px;
     bottom: 48px;
     font-size: 40px;
     font-weight: bold;
@@ -33,8 +33,27 @@ Armor {
     position: absolute;
     background-color: rgba( $black, 0.5 );
     border-radius: $border-radius;
-    left: 48;
+    left: 48px;
     bottom: 118px;
+    font-size: 40px;
+    font-weight: bold;
+    color: $white;
+    height: 60px;
+    padding: 0 10px;
+    align-items: center;
+
+    .icon {
+        font-size: 30px;
+        padding-right: 10px;
+    }
+}
+
+Role {
+    position: absolute;
+    background-color: rgba( $black, 0.5 );
+    border-radius: $border-radius;
+    left: 48px;
+    bottom: 188px;
     font-size: 40px;
     font-weight: bold;
     color: $white;
