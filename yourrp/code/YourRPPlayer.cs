@@ -6,6 +6,8 @@ namespace YourRPExample
 {
 	partial class RPPlayer : Player
 	{
+		[Net, Predicted]
+		public float Armor { get; set; }
 		public override void Respawn()
 		{
 			SetModel( "models/citizen/citizen.vmdl" );
@@ -24,6 +26,7 @@ namespace YourRPExample
 			base.Respawn();
 
 			Health = 100;
+			Armor = 50;
 		}
 
 		public override void Simulate( Client cl )

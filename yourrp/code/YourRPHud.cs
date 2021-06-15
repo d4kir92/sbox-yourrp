@@ -52,7 +52,10 @@ namespace YourRPExample
 			var player = Local.Pawn;
 			if ( player == null ) return;
 
-			Label.Text = $"{player.Health:n0}";
+			var rpplayer = (RPPlayer)player; // Cast to RPPlayer
+			if ( player == null ) return;
+
+			Label.Text = $"{rpplayer.Armor:n0}";
 		}
 	}
 }
