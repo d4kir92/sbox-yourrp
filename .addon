@@ -1,20 +1,18 @@
 {
-		"name": "yourrp",
-		"version": "0.1",
-		"sharedassets": "*.*",
-		
-		"depends": 
-		[
-			"base",
-			"citizen",
-			"rust"
-		],
+	"name": "YourRP",
+	"version": "0.1",
+	"sharedassets": "*.*",
 
-		"gamemodes":
-		[
-			{
-				"name": "yourrp",
-				"title": "YourRP"
-			}
-		]
+	"depends": [
+		"base",
+		"citizen",
+		"rust"
+	],
+
+	"gamemodes": [
+		{
+			"name": "YourRP",
+			"title": "YourRP"
+		}
+	]
 }
