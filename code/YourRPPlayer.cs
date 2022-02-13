@@ -44,10 +44,10 @@ namespace YourRPExample
 			{
 				var ragdoll = new ModelEntity();
 				ragdoll.SetModel( "models/citizen/citizen.vmdl" );  
-				ragdoll.Position = EyePos + EyeRot.Forward * 40;
+				ragdoll.Position = EyePosition + EyeRotation.Forward * 40;
 				ragdoll.Rotation = Rotation.LookAt( Vector3.Random.Normal );
 				ragdoll.SetupPhysicsFromModel( PhysicsMotionType.Dynamic, false );
-				ragdoll.PhysicsGroup.Velocity = EyeRot.Forward * 1000;
+				ragdoll.PhysicsGroup.Velocity = EyeRotation.Forward * 1000;
 			}
 		}
 
